@@ -1,0 +1,95 @@
+body {
+    background-color: #dae0e5;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+
+#sidebar-wrapper {
+    min-width: 20vw;
+    max-width: 20vw;
+    min-height: 100vh;
+    background-color: #dae0e5;
+}
+
+#page-content-wrapper{
+    min-width: 80vw;
+    max-width: 80vw;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+.container-fluid {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 90%;
+    max-height: 90%;
+}
+
+.navbar {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 10%;
+    max-height: 10%;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .container-fluid {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 95%;
+        max-height: 95%;
+    }
+
+    #navbar {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 5%;
+        max-height: 5%;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container-fluid {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 95%;
+        max-height: 95%;
+    }
+
+    #navbar {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 5%;
+        max-height: 5%;
+    }
+}
+.list-group-item-action, .hero-unit a{
+    color: #7ebc71; !important;
+}
+
+.list-group-item-action{
+    word-break: break-all;
+}
+
+.container-fluid{
+    text-align: center;
+}
+
+#container {
+    display: inline-block;
+}
+.hero-unit {
+    background: #d6ffc8;
+    background-image: url("/static/img/bluejay.jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 40vh;
+    max-height: 40vh;
+}

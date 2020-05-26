@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href={{ url_for('static', filename='stylesheets/bootstrap.min.css')}}>
+    <link rel="stylesheet" href={{ url_for('static', filename='stylesheets/index.css')}}>
+    <link rel="stylesheet" href={{ url_for('static', filename='stylesheets/gallery.css')}}>
+    <title>Gallery</title>
+</head>
+<body>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right collapse" id="sidebar-wrapper">
+        <div class="list-group list-group-flush" id="sidebar-elements">
+              <a href="/" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="/analyze" class="list-group-item list-group-item-action bg-light">Analyze</a>
+            <a href="/signup" id="signup_link" class="list-group-item list-group-item-action bg-light">Sign Up</a>
+            <a href="/login" id="login_link" class="list-group-item list-group-item-action bg-light">Login</a>
+            <div id="gallery_link">
+
+            </div>
+            <a href="/about" class="list-group-item list-group-item-action bg-light">About</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" id="navbar">
+            <button class="btn  " id="menu-toggle" data-toggle="collapse" data-target="#sidebar-wrapper">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+
+        <div class="container-fluid" id="container">
+            <div class="caption">
+                <h1 class="mt-4">Gallery</h1>
+            </div>
+            <div id="images">
+
+            </div>
+        </div>
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src={{ url_for('static', filename='js/bootstrap.bundle.min.js')}}></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-storage.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyC4sFefS6PQ2nVSju5LSCh_C3dOITk-eKo",
+        authDomain: "birdrecognition-169ea.firebaseapp.com",
+        databaseURL: "https://birdrecognition-169ea.firebaseio.com",
+        projectId: "birdrecognition-169ea",
+        storageBucket: "birdrecognition-169ea.appspot.com",
+        messagingSenderId: "593862938850",
+        appId: "1:593862938850:web:59c1eb97aba3788fd64ebb",
+        measurementId: "G-9LD0YGYPYW"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    auth = firebase.auth();
+    db = firebase.firestore();
+</script>
+<script src={{ url_for('static', filename='js/navbar.js')}}></script>
+<script src={{ url_for('static', filename='js/gallery.js')}}></script>
+
+
+</body>
+</html>

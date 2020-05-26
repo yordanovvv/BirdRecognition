@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href={{ url_for('static', filename='stylesheets/bootstrap.min.css')}}>
+    <link rel="stylesheet" href={{ url_for('static', filename='stylesheets/index.css')}}>
+    <title>Bird Recognition</title>
+</head>
+<body>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="border-right collapse" id="sidebar-wrapper">
+        <div class="list-group list-group-flush" id="sidebar-elements">
+            <a href="/" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="/analyze" class="list-group-item list-group-item-action bg-light">Analyze</a>
+            <a href="/signup" id="signup_link" class="list-group-item list-group-item-action bg-light">Sign Up</a>
+            <a href="/login" id="login_link" class="list-group-item list-group-item-action bg-light">Login</a>
+            <div id="gallery_link">
+
+            </div>
+            <a href="/about" class="list-group-item list-group-item-action bg-light">About</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+            <button class="btn  " id="menu-toggle" data-toggle="collapse" data-target="#sidebar-wrapper"  >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+
+        <div class="container-fluid">
+            <h1 class="mt-4">Home</h1>
+            <div class="hero-unit">
+                <h2 id="greet"><i>Hello there!</i></h2>
+              <p>You are a bird watcher? If not, maybe you would like to recognise birds from images? Or maybe you are just interested in the process? Upload an image to the analyser and it will return its best prediction. </p>
+              <p>
+                <a class="btn btn-primary btn-large bg-light" href="/analyze">
+                  Go to Analyze
+                </a>
+              </p>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src={{ url_for('static', filename='js/bootstrap.bundle.min.js')}}></script>
+
+<script src={{ url_for('static', filename='js/navbar.js')}}></script>
+
+</body>
+</html>

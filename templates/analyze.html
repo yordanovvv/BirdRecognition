@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href={{ url_for('static', filename='stylesheets/bootstrap.min.css')}}>
+    <link rel="stylesheet" href={{ url_for('static', filename='stylesheets/index.css')}}>
+    <title>Analyze Image</title>
+</head>
+<body>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="border-right collapse" id="sidebar-wrapper">
+        <div class="list-group list-group-flush" id="sidebar-elements">
+              <a href="/" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="/analyze" class="list-group-item list-group-item-action bg-light">Analyze</a>
+            <a href="/signup" id="signup_link" class="list-group-item list-group-item-action bg-light">Sign Up</a>
+            <a href="/login" id="login_link" class="list-group-item list-group-item-action bg-light">Login</a>
+            <div id="gallery_link">
+
+            </div>
+            <a href="/about" class="list-group-item list-group-item-action bg-light">About</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+            <button class="btn  " id="menu-toggle" data-toggle="collapse" data-target="#sidebar-wrapper"  >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+
+        <div class="container-fluid">
+            <div id="container">
+                <h1 class="mt-4">Analyze an Image</h1>
+                <form id="image_form" enctype="multipart/form-data">
+                    <div id="step1">
+                        <h2>Step 1</h2>
+                        <h3>Upload an image</h3>
+                    </div>
+                    <input type="file" id="uploaded_file" name="uploaded_file" accept="image/*"><br>
+                    <div id="step2" style="display: none">
+                        <h2>Step 2</h2>
+                        <h3>Analyze it and save it to your gallery</h3>
+                        <div id="imageDIV">
+                            <img src="" id="imageAnalyze" style="display: none; height: 60vh; width: 70vw">
+                        </div>
+                        <input type="submit" value="Analyze" id="analyze_button">
+                    </div>
+                </form>
+
+                <div id="step3" style="display: none">
+                    <h2>Step 3</h2>
+                    <h3>Get a result</h3>
+                    <div id="resultDIV">
+                        <p>
+                            <h4>Your prediction was: <span id="prediction"></span></h4>
+                            <h4>The probability of the prediction is: <span id="probability"></span></h4>
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script  src={{ url_for('static', filename='js/bootstrap.bundle.min.js')}}></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-storage.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyC4sFefS6PQ2nVSju5LSCh_C3dOITk-eKo",
+        authDomain: "birdrecognition-169ea.firebaseapp.com",
+        databaseURL: "https://birdrecognition-169ea.firebaseio.com",
+        projectId: "birdrecognition-169ea",
+        storageBucket: "birdrecognition-169ea.appspot.com",
+        messagingSenderId: "593862938850",
+        appId: "1:593862938850:web:59c1eb97aba3788fd64ebb",
+        measurementId: "G-9LD0YGYPYW"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    auth = firebase.auth();
+    db = firebase.firestore();
+    storage = firebase.storage();
+</script>
+
+<script src={{ url_for('static', filename='js/navbar.js')}}></script>
+<script src={{ url_for('static', filename='js/analyze.js')}}></script>
+
+</body>
+</html>

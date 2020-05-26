@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href={{ url_for('static', filename='stylesheets/bootstrap.min.css')}}>
+    <link rel="stylesheet" href={{ url_for('static', filename='stylesheets/index.css')}}>
+
+    <title>About</title>
+</head>
+<body>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="border-right collapse" id="sidebar-wrapper">
+        <div class="list-group list-group-flush" id="sidebar-elements">
+              <a href="/" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="/analyze" class="list-group-item list-group-item-action bg-light">Analyze</a>
+            <a href="/signup" id="signup_link" class="list-group-item list-group-item-action bg-light">Sign Up</a>
+            <a href="/login" id="login_link" class="list-group-item list-group-item-action bg-light">Login</a>
+            <div id="gallery_link">
+
+            </div>
+            <a href="/about" class="list-group-item list-group-item-action bg-light">About</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+            <button class="btn  " id="menu-toggle" data-toggle="collapse" data-target="#sidebar-wrapper"  >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+
+        <div class="container-fluid">
+            <h1 class="mt-4">About</h1>
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                    <h1 class="display-4"></h1>
+                    <p class="lead">
+                        'Bird Recognition from Images' is a responsive web app developed for a BSc Computer Science, University of Strathclyde.
+                        <br><br>
+                    It provides an algorithm that takes in an image as input, analyzes it and attempts to recognise the bird that is on the picture.
+                    </p>
+                    <p>
+                        Created by: Hristo Yordanov
+                        <br>
+                        Email: hristo.yordanov.2016@uni.strath.ac.uk
+                        <br><br>
+                        Supervisor: Dr Michael Cashmore
+                        <br>
+                        University of Strathclyde
+                    </p>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src={{ url_for('static', filename='js/bootstrap.bundle.min.js')}}></script>
+
+<script src={{ url_for('static', filename='js/navbar.js')}}></script>
+
+</body>
+</html>
